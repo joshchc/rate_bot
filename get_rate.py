@@ -20,19 +20,11 @@ class Rate:
     
     def rate_json(self):
         data = json.loads(self.get_response())
-        print(data)
         self.rate_time = datetime.fromtimestamp(data['timestamp']/1000)
         self.data = data['rates']
         
     def main(self, curr: str):
         self.rate_json()
-        self.data[f'{curr}']
+        self.data = self.data[f'{curr}']
 
 
-if __name__ == "__main__":
-
-    r = Rate()
-    res = r.rate_json()
-    print(r.rate_time)
-    print(r.data['EUR'])
-    print(1.0 /r.data["EUR"])

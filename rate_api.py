@@ -15,5 +15,10 @@ def read_root():
 @app.get("/rate/{currency}")
 def read_item(currency: str):
     rate.main(curr=currency)
-    return {"item_id": currency, "query": rate.rate_time, "data":rate.data}
+    return {
+        "Time": rate.rate_time,
+        "Currency": currency,
+        f"USD to {currency}":rate.data,
+        f"{currency} to USD":1.0/rate.data
+    }
 
