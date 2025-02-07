@@ -27,4 +27,12 @@ class Rate:
         self.rate_json()
         self.data = self.data[f'{curr}']
 
+        return {
+            "Time": datetime.strftime(self.rate_time + timedelta(hours = 8), format="%Y-%d-%m %H:%M:%S"),
+            "Currency": curr,
+            f"USD to {curr}":self.data,
+            f"{curr} to USD":1.0/self.data
+        } 
+
+
 
