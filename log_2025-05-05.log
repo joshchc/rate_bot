@@ -1,0 +1,358 @@
+nohup: ignoring input
+INFO:     Will watch for changes in these directories: ['/home/finance/rate_bot']
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+INFO:     Started reloader process [3349942] using StatReload
+t=2025-05-05T08:35:33+0000 lvl=warn msg="can't bind default web address, trying alternatives" obj=web addr=127.0.0.1:4040
+ERROR:  authentication failed: Your account is limited to 1 simultaneous ngrok agent sessions.
+ERROR:  You can run multiple simultaneous tunnels from a single agent session by defining the tunnels in your agent configuration file and starting them with the command `ngrok start --all`.
+ERROR:  Read more about the agent configuration file: https://ngrok.com/docs/secure-tunnels/ngrok-agent/reference/config
+ERROR:  You can view your current agent sessions in the dashboard:
+ERROR:  https://dashboard.ngrok.com/agents
+ERROR:  
+ERROR:  ERR_NGROK_108
+ERROR:  https://ngrok.com/docs/errors/err_ngrok_108
+ERROR:  
+t=2025-05-05T08:35:33+0000 lvl=eror msg="failed to reconnect session" obj=tunnels.session err="authentication failed: Your account is limited to 1 simultaneous ngrok agent sessions.\nYou can run multiple simultaneous tunnels from a single agent session by defining the tunnels in your agent configuration file and starting them with the command `ngrok start --all`.\nRead more about the agent configuration file: https://ngrok.com/docs/secure-tunnels/ngrok-agent/reference/config\nYou can view your current agent sessions in the dashboard:\nhttps://dashboard.ngrok.com/agents\r\n\r\nERR_NGROK_108\r\n"
+t=2025-05-05T08:35:33+0000 lvl=eror msg="session closing" obj=tunnels.session err="authentication failed: Your account is limited to 1 simultaneous ngrok agent sessions.\nYou can run multiple simultaneous tunnels from a single agent session by defining the tunnels in your agent configuration file and starting them with the command `ngrok start --all`.\nRead more about the agent configuration file: https://ngrok.com/docs/secure-tunnels/ngrok-agent/reference/config\nYou can view your current agent sessions in the dashboard:\nhttps://dashboard.ngrok.com/agents\r\n\r\nERR_NGROK_108\r\n"
+t=2025-05-05T08:35:33+0000 lvl=eror msg="terminating with error" obj=app err="authentication failed: Your account is limited to 1 simultaneous ngrok agent sessions.\nYou can run multiple simultaneous tunnels from a single agent session by defining the tunnels in your agent configuration file and starting them with the command `ngrok start --all`.\nRead more about the agent configuration file: https://ngrok.com/docs/secure-tunnels/ngrok-agent/reference/config\nYou can view your current agent sessions in the dashboard:\nhttps://dashboard.ngrok.com/agents\r\n\r\nERR_NGROK_108\r\n"
+t=2025-05-05T08:35:33+0000 lvl=crit msg="command failed" err="authentication failed: Your account is limited to 1 simultaneous ngrok agent sessions.\nYou can run multiple simultaneous tunnels from a single agent session by defining the tunnels in your agent configuration file and starting them with the command `ngrok start --all`.\nRead more about the agent configuration file: https://ngrok.com/docs/secure-tunnels/ngrok-agent/reference/config\nYou can view your current agent sessions in the dashboard:\nhttps://dashboard.ngrok.com/agents\r\n\r\nERR_NGROK_108\r\n"
+Process SpawnProcess-1:
+Traceback (most recent call last):
+  File "/home/finance/miniconda3/envs/rate_bot/lib/python3.11/multiprocessing/process.py", line 314, in _bootstrap
+    self.run()
+  File "/home/finance/miniconda3/envs/rate_bot/lib/python3.11/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/finance/miniconda3/envs/rate_bot/lib/python3.11/site-packages/uvicorn/_subprocess.py", line 80, in subprocess_started
+    target(sockets=sockets)
+  File "/home/finance/miniconda3/envs/rate_bot/lib/python3.11/site-packages/uvicorn/server.py", line 66, in run
+    return asyncio.run(self.serve(sockets=sockets))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/finance/miniconda3/envs/rate_bot/lib/python3.11/asyncio/runners.py", line 190, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "/home/finance/miniconda3/envs/rate_bot/lib/python3.11/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/finance/miniconda3/envs/rate_bot/lib/python3.11/asyncio/base_events.py", line 654, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/home/finance/miniconda3/envs/rate_bot/lib/python3.11/site-packages/uvicorn/server.py", line 70, in serve
+    await self._serve(sockets)
+  File "/home/finance/miniconda3/envs/rate_bot/lib/python3.11/site-packages/uvicorn/server.py", line 77, in _serve
+    config.load()
+  File "/home/finance/miniconda3/envs/rate_bot/lib/python3.11/site-packages/uvicorn/config.py", line 435, in load
+    self.loaded_app = import_from_string(self.app)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/finance/miniconda3/envs/rate_bot/lib/python3.11/site-packages/uvicorn/importer.py", line 19, in import_from_string
+    module = importlib.import_module(module_str)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/finance/miniconda3/envs/rate_bot/lib/python3.11/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1204, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1176, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1147, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 690, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 940, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/finance/rate_bot/line_bot.py", line 29, in <module>
+    public_url = ngrok.connect(port).public_url
+                 ^^^^^^^^^^^^^^^^^^^
+  File "/home/finance/miniconda3/envs/rate_bot/lib/python3.11/site-packages/pyngrok/ngrok.py", line 350, in connect
+    api_url = get_ngrok_process(pyngrok_config).api_url
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/finance/miniconda3/envs/rate_bot/lib/python3.11/site-packages/pyngrok/ngrok.py", line 172, in get_ngrok_process
+    return process.get_process(pyngrok_config)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/finance/miniconda3/envs/rate_bot/lib/python3.11/site-packages/pyngrok/process.py", line 265, in get_process
+    return _start_process(pyngrok_config)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/finance/miniconda3/envs/rate_bot/lib/python3.11/site-packages/pyngrok/process.py", line 428, in _start_process
+    raise PyngrokNgrokError(f"The ngrok process errored on start: {ngrok_process.startup_error}.",
+pyngrok.exception.PyngrokNgrokError: The ngrok process errored on start: authentication failed: Your account is limited to 1 simultaneous ngrok agent sessions.\nYou can run multiple simultaneous tunnels from a single agent session by defining the tunnels in your agent configuration file and starting them with the command `ngrok start --all`.\nRead more about the agent configuration file: https://ngrok.com/docs/secure-tunnels/ngrok-agent/reference/config\nYou can view your current agent sessions in the dashboard:\nhttps://dashboard.ngrok.com/agents\r\n\r\nERR_NGROK_108\r\n.
+WARNING:  StatReload detected changes in 'line_bot.py'. Reloading...
+INFO:     Started server process [3350859]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     147.92.150.196:0 - "POST /callback HTTP/1.1" 200 OK
+INFO:     147.92.150.195:0 - "POST /callback HTTP/1.1" 200 OK
+INFO:     147.92.150.195:0 - "POST /callback HTTP/1.1" 200 OK
+INFO:     147.92.150.195:0 - "POST /callback HTTP/1.1" 200 OK
+INFO:     147.92.150.195:0 - "POST /callback HTTP/1.1" 200 OK
+INFO:     147.92.150.195:0 - "POST /callback HTTP/1.1" 200 OK
+INFO:     147.92.149.166:0 - "POST /callback HTTP/1.1" 200 OK
+INFO:     147.92.149.166:0 - "POST /callback HTTP/1.1" 200 OK
+INFO:     147.92.179.105:0 - "GET / HTTP/1.1" 404 Not Found
+INFO:     147.92.150.195:0 - "POST /callback HTTP/1.1" 200 OK
+INFO:     147.92.179.116:0 - "GET / HTTP/1.1" 404 Not Found
+INFO:     2401:e180:8d14:56f:a943:386:7b4c:f0af:0 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     2401:e180:8d14:56f:a943:386:7b4c:f0af:0 - "GET / HTTP/1.1" 404 Not Found
+INFO:     2401:e180:8d14:56f:a943:386:7b4c:f0af:0 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     2401:e180:8d14:56f:a943:386:7b4c:f0af:0 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     211.72.138.199:0 - "GET /callback HTTP/1.1" 405 Method Not Allowed
+INFO:     211.72.138.199:0 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     147.92.149.166:0 - "POST /callback HTTP/1.1" 200 OK
+HTTPSConnectionPool(host='www.xe.com', port=443): Max retries exceeded with url: /api/protected/midmarket-converter/ (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7f4d0b039d50>: Failed to resolve 'www.xe.com' ([Errno -3] Temporary failure in name resolution)"))
+INFO:     147.92.150.198:0 - "POST /callback HTTP/1.1" 200 OK
+INFO:     147.92.150.195:0 - "POST /callback HTTP/1.1" 200 OK
+INFO:     147.92.150.196:0 - "POST /callback HTTP/1.1" 200 OK
+INFO:     147.92.150.193:0 - "POST /callback HTTP/1.1" 200 OK
+INFO:     147.92.149.165:0 - "POST /callback HTTP/1.1" 200 OK
+INFO:     147.92.149.170:0 - "POST /callback HTTP/1.1" 200 OK
+INFO:     147.92.150.195:0 - "POST /callback HTTP/1.1" 200 OK
+INFO:     147.92.149.166:0 - "POST /callback HTTP/1.1" 200 OK
+INFO:     147.92.150.195:0 - "POST /callback HTTP/1.1" 200 OK
+INFO:     147.92.150.195:0 - "POST /callback HTTP/1.1" 200 OK
+INFO:     147.92.150.195:0 - "POST /callback HTTP/1.1" 200 OK
+INFO:     147.92.150.195:0 - "POST /callback HTTP/1.1" 200 OK
+HTTPSConnectionPool(host='www.xe.com', port=443): Max retries exceeded with url: /api/protected/midmarket-converter/ (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7f4d0b03ad50>: Failed to resolve 'www.xe.com' ([Errno -3] Temporary failure in name resolution)"))
+INFO:     147.92.149.166:0 - "POST /callback HTTP/1.1" 200 OK
+INFO:     147.92.149.166:0 - "POST /callback HTTP/1.1" 200 OK
+INFO:     147.92.149.166:0 - "POST /callback HTTP/1.1" 200 OK
+INFO:     147.92.149.166:0 - "POST /callback HTTP/1.1" 200 OK
+INFO:     147.92.150.195:0 - "POST /callback HTTP/1.1" 200 OK
+INFO:     147.92.150.195:0 - "POST /callback HTTP/1.1" 200 OK
+INFO:     147.92.150.195:0 - "POST /callback HTTP/1.1" 200 OK
+INFO:     147.92.149.166:0 - "POST /callback HTTP/1.1" 200 OK
+INFO:     147.92.149.166:0 - "POST /callback HTTP/1.1" 200 OK
+INFO:     147.92.149.166:0 - "POST /callback HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42442 - "GET /?vscodeBrowserReqId=1746701709040 HTTP/1.1" 404 Not Found
+INFO:     147.92.150.195:0 - "POST /callback HTTP/1.1" 200 OK
+INFO:     147.92.150.195:0 - "POST /callback HTTP/1.1" 200 OK
+INFO:     147.92.150.195:0 - "POST /callback HTTP/1.1" 200 OK
+INFO:     147.92.150.195:0 - "POST /callback HTTP/1.1" 200 OK
+INFO:     147.92.149.166:0 - "POST /callback HTTP/1.1" 200 OK
+INFO:     147.92.149.166:0 - "POST /callback HTTP/1.1" 200 OK
+INFO:     147.92.150.195:0 - "POST /callback HTTP/1.1" 200 OK
+INFO:     147.92.150.195:0 - "POST /callback HTTP/1.1" 200 OK
+INFO:     147.92.150.195:0 - "POST /callback HTTP/1.1" 200 OK
+INFO:     147.92.150.195:0 - "POST /callback HTTP/1.1" 200 OK
+HTTPSConnectionPool(host='www.xe.com', port=443): Max retries exceeded with url: /api/protected/midmarket-converter/ (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7f4d0b047410>: Failed to resolve 'www.xe.com' ([Errno -3] Temporary failure in name resolution)"))
+('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+INFO:     147.92.149.166:0 - "POST /callback HTTP/1.1" 200 OK
+INFO:     147.92.149.166:0 - "POST /callback HTTP/1.1" 200 OK
+INFO:     147.92.149.166:0 - "POST /callback HTTP/1.1" 200 OK
+HTTPSConnectionPool(host='www.xe.com', port=443): Max retries exceeded with url: /api/protected/midmarket-converter/ (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7f4d0b03a050>: Failed to resolve 'www.xe.com' ([Errno -3] Temporary failure in name resolution)"))
+HTTPSConnectionPool(host='www.xe.com', port=443): Max retries exceeded with url: /api/protected/midmarket-converter/ (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7f4d0b021d50>: Failed to resolve 'www.xe.com' ([Errno -3] Temporary failure in name resolution)"))
+INFO:     147.92.149.169:0 - "POST /callback HTTP/1.1" 200 OK
+HTTPSConnectionPool(host='www.xe.com', port=443): Max retries exceeded with url: /api/protected/midmarket-converter/ (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7f4d0c61c310>: Failed to resolve 'www.xe.com' ([Errno -3] Temporary failure in name resolution)"))
+HTTPSConnectionPool(host='www.xe.com', port=443): Max retries exceeded with url: /api/protected/midmarket-converter/ (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7f4d0b0473d0>: Failed to resolve 'www.xe.com' ([Errno -3] Temporary failure in name resolution)"))
+INFO:     147.92.150.195:0 - "POST /callback HTTP/1.1" 200 OK
+('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+INFO:     147.92.150.195:0 - "POST /callback HTTP/1.1" 200 OK
+INFO:     147.92.150.195:0 - "POST /callback HTTP/1.1" 200 OK
+INFO:     147.92.150.195:0 - "POST /callback HTTP/1.1" 200 OK
+INFO:     147.92.150.195:0 - "POST /callback HTTP/1.1" 200 OK
+INFO:     147.92.149.166:0 - "POST /callback HTTP/1.1" 200 OK
+INFO:     147.92.149.166:0 - "POST /callback HTTP/1.1" 200 OK
+HTTPSConnectionPool(host='www.xe.com', port=443): Max retries exceeded with url: /api/protected/midmarket-converter/ (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7f4d0b044250>: Failed to resolve 'www.xe.com' ([Errno -3] Temporary failure in name resolution)"))
+HTTPSConnectionPool(host='www.xe.com', port=443): Max retries exceeded with url: /api/protected/midmarket-converter/ (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7f4d0b023410>: Failed to resolve 'www.xe.com' ([Errno -3] Temporary failure in name resolution)"))
+INFO:     147.92.150.195:0 - "POST /callback HTTP/1.1" 200 OK
+INFO:     147.92.149.166:0 - "POST /callback HTTP/1.1" 200 OK
+INFO:     147.92.149.166:0 - "POST /callback HTTP/1.1" 200 OK
+INFO:     147.92.150.195:0 - "POST /callback HTTP/1.1" 200 OK
+INFO:     147.92.150.193:0 - "POST /callback HTTP/1.1" 200 OK
+INFO:     61.216.61.199:0 - "GET /callback HTTP/1.1" 405 Method Not Allowed
+INFO:     61.216.61.199:0 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     147.92.150.198:0 - "POST /callback HTTP/1.1" 200 OK
+INFO:     147.92.150.195:0 - "POST /callback HTTP/1.1" 200 OK
+('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+INFO:     147.92.149.166:0 - "POST /callback HTTP/1.1" 200 OK
+INFO:     147.92.149.166:0 - "POST /callback HTTP/1.1" 200 OK
+INFO:     147.92.149.166:0 - "POST /callback HTTP/1.1" 200 OK
+INFO:     147.92.150.195:0 - "POST /callback HTTP/1.1" 200 OK
+INFO:     147.92.149.166:0 - "POST /callback HTTP/1.1" 200 OK
+INFO:     147.92.149.168:0 - "POST /callback HTTP/1.1" 200 OK
+INFO:     147.92.150.197:0 - "POST /callback HTTP/1.1" 200 OK
+INFO:     147.92.149.168:0 - "POST /callback HTTP/1.1" 200 OK
+INFO:     147.92.149.168:0 - "POST /callback HTTP/1.1" 200 OK
+INFO:     147.92.149.168:0 - "POST /callback HTTP/1.1" 200 OK
+INFO:     147.92.149.168:0 - "POST /callback HTTP/1.1" 200 OK
+HTTPSConnectionPool(host='www.xe.com', port=443): Max retries exceeded with url: /api/protected/midmarket-converter/ (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7f4d0c09f110>: Failed to resolve 'www.xe.com' ([Errno -3] Temporary failure in name resolution)"))
+HTTPSConnectionPool(host='www.xe.com', port=443): Max retries exceeded with url: /api/protected/midmarket-converter/ (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7f4d0b04dfd0>: Failed to resolve 'www.xe.com' ([Errno -3] Temporary failure in name resolution)"))
+INFO:     147.92.149.168:0 - "POST /callback HTTP/1.1" 200 OK
+INFO:     147.92.149.168:0 - "POST /callback HTTP/1.1" 200 OK
+INFO:     147.92.149.168:0 - "POST /callback HTTP/1.1" 200 OK
+INFO:     147.92.149.168:0 - "POST /callback HTTP/1.1" 200 OK
+INFO:     147.92.150.197:0 - "POST /callback HTTP/1.1" 200 OK
+HTTPSConnectionPool(host='www.xe.com', port=443): Max retries exceeded with url: /api/protected/midmarket-converter/ (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7f4d0b03ec50>: Failed to resolve 'www.xe.com' ([Errno -3] Temporary failure in name resolution)"))
+HTTPSConnectionPool(host='www.xe.com', port=443): Max retries exceeded with url: /api/protected/midmarket-converter/ (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7f4d0b03d790>: Failed to resolve 'www.xe.com' ([Errno -3] Temporary failure in name resolution)"))
+INFO:     147.92.149.168:0 - "POST /callback HTTP/1.1" 200 OK
+INFO:     147.92.149.168:0 - "POST /callback HTTP/1.1" 200 OK
+INFO:     147.92.149.168:0 - "POST /callback HTTP/1.1" 200 OK
+INFO:     147.92.150.197:0 - "POST /callback HTTP/1.1" 200 OK
+INFO:     147.92.150.197:0 - "POST /callback HTTP/1.1" 200 OK
+INFO:     147.92.150.197:0 - "POST /callback HTTP/1.1" 200 OK
+INFO:     147.92.150.197:0 - "POST /callback HTTP/1.1" 200 OK
+INFO:     147.92.150.197:0 - "POST /callback HTTP/1.1" 200 OK
+HTTPSConnectionPool(host='www.xe.com', port=443): Max retries exceeded with url: /api/protected/midmarket-converter/ (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7f4d0b03ee90>: Failed to resolve 'www.xe.com' ([Errno -3] Temporary failure in name resolution)"))
+HTTPSConnectionPool(host='www.xe.com', port=443): Read timed out. (read timeout=None)
+HTTPSConnectionPool(host='www.xe.com', port=443): Read timed out. (read timeout=None)
+INFO:     147.92.149.168:0 - "POST /callback HTTP/1.1" 200 OK
+INFO:     147.92.149.168:0 - "POST /callback HTTP/1.1" 200 OK
+INFO:     147.92.149.168:0 - "POST /callback HTTP/1.1" 200 OK
+INFO:     147.92.150.197:0 - "POST /callback HTTP/1.1" 200 OK
+INFO:     147.92.149.168:0 - "POST /callback HTTP/1.1" 200 OK
+INFO:     147.92.149.168:0 - "POST /callback HTTP/1.1" 200 OK
+INFO:     147.92.149.168:0 - "POST /callback HTTP/1.1" 200 OK
+INFO:     147.92.149.168:0 - "POST /callback HTTP/1.1" 200 OK
+HTTPSConnectionPool(host='www.xe.com', port=443): Max retries exceeded with url: /api/protected/midmarket-converter/ (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7f4d0b063dd0>: Failed to resolve 'www.xe.com' ([Errno -3] Temporary failure in name resolution)"))
+INFO:     147.92.149.168:0 - "POST /callback HTTP/1.1" 200 OK
+INFO:     147.92.149.168:0 - "POST /callback HTTP/1.1" 200 OK
+INFO:     147.92.150.194:0 - "POST /callback HTTP/1.1" 200 OK
+INFO:     147.92.150.194:0 - "POST /callback HTTP/1.1" 200 OK
+INFO:     147.92.150.197:0 - "POST /callback HTTP/1.1" 200 OK
+INFO:     147.92.150.194:0 - "POST /callback HTTP/1.1" 200 OK
+INFO:     147.92.150.194:0 - "POST /callback HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/home/finance/miniconda3/envs/rate_bot/lib/python3.11/site-packages/pymysql/connections.py", line 806, in _write_bytes
+    self._sock.sendall(data)
+BrokenPipeError: [Errno 32] Broken pipe
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/finance/miniconda3/envs/rate_bot/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1964, in _exec_single_context
+    self.dialect.do_execute(
+  File "/home/finance/miniconda3/envs/rate_bot/lib/python3.11/site-packages/sqlalchemy/engine/default.py", line 945, in do_execute
+    cursor.execute(statement, parameters)
+  File "/home/finance/miniconda3/envs/rate_bot/lib/python3.11/site-packages/pymysql/cursors.py", line 153, in execute
+    result = self._query(query)
+             ^^^^^^^^^^^^^^^^^^
+  File "/home/finance/miniconda3/envs/rate_bot/lib/python3.11/site-packages/pymysql/cursors.py", line 322, in _query
+    conn.query(q)
+  File "/home/finance/miniconda3/envs/rate_bot/lib/python3.11/site-packages/pymysql/connections.py", line 562, in query
+    self._execute_command(COMMAND.COM_QUERY, sql)
+  File "/home/finance/miniconda3/envs/rate_bot/lib/python3.11/site-packages/pymysql/connections.py", line 864, in _execute_command
+    self._write_bytes(packet)
+  File "/home/finance/miniconda3/envs/rate_bot/lib/python3.11/site-packages/pymysql/connections.py", line 809, in _write_bytes
+    raise err.OperationalError(
+pymysql.err.OperationalError: (2006, "MySQL server has gone away (BrokenPipeError(32, 'Broken pipe'))")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/finance/miniconda3/envs/rate_bot/lib/python3.11/site-packages/uvicorn/protocols/http/h11_impl.py", line 403, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/finance/miniconda3/envs/rate_bot/lib/python3.11/site-packages/uvicorn/middleware/proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/finance/miniconda3/envs/rate_bot/lib/python3.11/site-packages/fastapi/applications.py", line 1054, in __call__
+    await super().__call__(scope, receive, send)
+  File "/home/finance/miniconda3/envs/rate_bot/lib/python3.11/site-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/finance/miniconda3/envs/rate_bot/lib/python3.11/site-packages/starlette/middleware/errors.py", line 187, in __call__
+    raise exc
+  File "/home/finance/miniconda3/envs/rate_bot/lib/python3.11/site-packages/starlette/middleware/errors.py", line 165, in __call__
+    await self.app(scope, receive, _send)
+  File "/home/finance/miniconda3/envs/rate_bot/lib/python3.11/site-packages/starlette/middleware/exceptions.py", line 62, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/home/finance/miniconda3/envs/rate_bot/lib/python3.11/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/home/finance/miniconda3/envs/rate_bot/lib/python3.11/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/finance/miniconda3/envs/rate_bot/lib/python3.11/site-packages/starlette/routing.py", line 715, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/finance/miniconda3/envs/rate_bot/lib/python3.11/site-packages/starlette/routing.py", line 735, in app
+    await route.handle(scope, receive, send)
+  File "/home/finance/miniconda3/envs/rate_bot/lib/python3.11/site-packages/starlette/routing.py", line 288, in handle
+    await self.app(scope, receive, send)
+  File "/home/finance/miniconda3/envs/rate_bot/lib/python3.11/site-packages/starlette/routing.py", line 76, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/home/finance/miniconda3/envs/rate_bot/lib/python3.11/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/home/finance/miniconda3/envs/rate_bot/lib/python3.11/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/finance/miniconda3/envs/rate_bot/lib/python3.11/site-packages/starlette/routing.py", line 73, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/home/finance/miniconda3/envs/rate_bot/lib/python3.11/site-packages/fastapi/routing.py", line 301, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/finance/miniconda3/envs/rate_bot/lib/python3.11/site-packages/fastapi/routing.py", line 212, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/finance/rate_bot/line_bot.py", line 157, in callback
+    handler.handle(body.decode("utf-8"), signature)
+  File "/home/finance/miniconda3/envs/rate_bot/lib/python3.11/site-packages/linebot/webhook.py", line 278, in handle
+    self.__invoke_func(func, event, payload)
+  File "/home/finance/miniconda3/envs/rate_bot/lib/python3.11/site-packages/linebot/webhook.py", line 290, in __invoke_func
+    func(event)
+  File "/home/finance/rate_bot/line_bot.py", line 67, in handle_message
+    db.commit()
+  File "/home/finance/miniconda3/envs/rate_bot/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 2032, in commit
+    trans.commit(_to_root=True)
+  File "<string>", line 2, in commit
+  File "/home/finance/miniconda3/envs/rate_bot/lib/python3.11/site-packages/sqlalchemy/orm/state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "/home/finance/miniconda3/envs/rate_bot/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 1313, in commit
+    self._prepare_impl()
+  File "<string>", line 2, in _prepare_impl
+  File "/home/finance/miniconda3/envs/rate_bot/lib/python3.11/site-packages/sqlalchemy/orm/state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "/home/finance/miniconda3/envs/rate_bot/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 1288, in _prepare_impl
+    self.session.flush()
+  File "/home/finance/miniconda3/envs/rate_bot/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 4353, in flush
+    self._flush(objects)
+  File "/home/finance/miniconda3/envs/rate_bot/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 4488, in _flush
+    with util.safe_reraise():
+  File "/home/finance/miniconda3/envs/rate_bot/lib/python3.11/site-packages/sqlalchemy/util/langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/home/finance/miniconda3/envs/rate_bot/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 4449, in _flush
+    flush_context.execute()
+  File "/home/finance/miniconda3/envs/rate_bot/lib/python3.11/site-packages/sqlalchemy/orm/unitofwork.py", line 466, in execute
+    rec.execute(self)
+  File "/home/finance/miniconda3/envs/rate_bot/lib/python3.11/site-packages/sqlalchemy/orm/unitofwork.py", line 642, in execute
+    util.preloaded.orm_persistence.save_obj(
+  File "/home/finance/miniconda3/envs/rate_bot/lib/python3.11/site-packages/sqlalchemy/orm/persistence.py", line 93, in save_obj
+    _emit_insert_statements(
+  File "/home/finance/miniconda3/envs/rate_bot/lib/python3.11/site-packages/sqlalchemy/orm/persistence.py", line 1233, in _emit_insert_statements
+    result = connection.execute(
+             ^^^^^^^^^^^^^^^^^^^
+  File "/home/finance/miniconda3/envs/rate_bot/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1416, in execute
+    return meth(
+           ^^^^^
+  File "/home/finance/miniconda3/envs/rate_bot/lib/python3.11/site-packages/sqlalchemy/sql/elements.py", line 523, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/finance/miniconda3/envs/rate_bot/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1638, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/finance/miniconda3/envs/rate_bot/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1843, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/finance/miniconda3/envs/rate_bot/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1983, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "/home/finance/miniconda3/envs/rate_bot/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 2352, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/home/finance/miniconda3/envs/rate_bot/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1964, in _exec_single_context
+    self.dialect.do_execute(
+  File "/home/finance/miniconda3/envs/rate_bot/lib/python3.11/site-packages/sqlalchemy/engine/default.py", line 945, in do_execute
+    cursor.execute(statement, parameters)
+  File "/home/finance/miniconda3/envs/rate_bot/lib/python3.11/site-packages/pymysql/cursors.py", line 153, in execute
+    result = self._query(query)
+             ^^^^^^^^^^^^^^^^^^
+  File "/home/finance/miniconda3/envs/rate_bot/lib/python3.11/site-packages/pymysql/cursors.py", line 322, in _query
+    conn.query(q)
+  File "/home/finance/miniconda3/envs/rate_bot/lib/python3.11/site-packages/pymysql/connections.py", line 562, in query
+    self._execute_command(COMMAND.COM_QUERY, sql)
+  File "/home/finance/miniconda3/envs/rate_bot/lib/python3.11/site-packages/pymysql/connections.py", line 864, in _execute_command
+    self._write_bytes(packet)
+  File "/home/finance/miniconda3/envs/rate_bot/lib/python3.11/site-packages/pymysql/connections.py", line 809, in _write_bytes
+    raise err.OperationalError(
+sqlalchemy.exc.OperationalError: (pymysql.err.OperationalError) (2006, "MySQL server has gone away (BrokenPipeError(32, 'Broken pipe'))")
+[SQL: INSERT INTO rate_targets (user_id, pair, target) VALUES (%(user_id)s, %(pair)s, %(target)s)]
+[parameters: {'user_id': 'U382c5bb1154bc427c532ba18174fe97e', 'pair': 'EURUSD', 'target': 1.146}]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+INFO:     147.92.149.168:0 - "POST /callback HTTP/1.1" 200 OK
+INFO:     147.92.149.168:0 - "POST /callback HTTP/1.1" 200 OK
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [3350859]
+INFO:     Stopping reloader process [3349942]

@@ -6,6 +6,7 @@ import re
 
 
 class Rate:
+
     def get_response(self):
 
         url = 'https://www.xe.com/api/protected/midmarket-converter/'
@@ -24,11 +25,31 @@ class Rate:
         self.data = data['rates']
         
     def main(self, curr: str):
+        try:
+            self.rate_json()
+            self.data = self.data[f'{curr.upper()}']
+
+            return  f"""USD -> {curr.upper()}: {self.data:.6f}\n{curr.upper()} -> USD: {(1.0/self.data):.6f}"""
+        except KeyError:
+            return "查詢錯誤"
+        
+    def currency_conversion(self, text: str):
+        try:
+            self.rate_json()
+            s1 = text[:3]
+            s2 = text[-3:]
+            c1 = self.data[f'{s1.upper()}']
+            c2 = self.data[f'{s2.upper()}']
+
+            return f"""{s1.upper()} -> {s2.upper()}: {(c2/c1):.6f}\n{s2.upper()} -> {s1.upper()}: {(c1/c2):.6f}"""
+
+        except KeyError:
+            return "查詢錯誤"
+
+    def compare_currency(self, text:str):
         self.rate_json()
-        self.data = self.data[f'{curr.upper()}']
-
-        return  f"""USD to {curr.upper()}: {self.data:.6f}\n{curr.upper()} to USD: {(1.0/self.data):.6f}"""
-
-
-
-
+        s1 = text[:3]
+        s2 = text[-3:]
+        c1 = self.data[f'{s1.upper()}']
+        c2 = self.data[f'{s2.upper()}']
+        return c2/c1

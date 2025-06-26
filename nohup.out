@@ -1,0 +1,9 @@
+ERROR:  You must specify a single argument: a port or address to tunnel to.
+ERROR:  You specified 2 arguments: [http://0.0.0.0:8000 ngrok.log]
+ERROR:  For example, to expose port 80, run 'ngrok http 80'.
+ERROR:  You must specify a single argument: a port or address to tunnel to.
+ERROR:  You specified 2 arguments: [http://0.0.0.0:8000 ngrok.log]
+ERROR:  For example, to expose port 80, run 'ngrok http 80'.
+ERROR:  You must specify a single argument: a port or address to tunnel to.
+ERROR:  You specified 2 arguments: [8000 ngrok.log]
+ERROR:  For example, to expose port 80, run 'ngrok http 80'.
